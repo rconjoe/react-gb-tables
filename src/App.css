@@ -29,3 +29,7 @@ button {
   min-width: 5em;
   margin: 1em;
 }
+
+div.padBottom {
+  padding-bottom: 5rem;
+}
