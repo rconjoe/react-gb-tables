@@ -97,7 +97,7 @@ function App() {
             Click a character's image to show more details.
           </div>
         </Row>
-        <Row>
+        <Row className='padBottom'>
           <Col md={{ span: 8, offset: 2}}>
             <CharacterTable columns={columns} data={data} />
           </Col>
