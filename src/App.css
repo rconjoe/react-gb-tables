@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.App {
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #282c34;
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+}
+
+.characterThumb {
+  min-width: 80px;
+  max-height: 100px;
+  width: 100%;
+  display: block;
+}
+
+.aliasesCell {
+  max-width: 20em;
+  margin: 1em;
+}
+
+.birthdayCell {
+  min-width: 5em;
+  margin: 1em;
+}
