@@ -4,7 +4,8 @@
 ```git clone https://github.com/rconjoe/react-gb-tables```
 
 ## Usage
-```cd react-gb-tables \
+```
+cd react-gb-tables \
 npm install \
 npm run dev
 ```
