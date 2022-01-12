@@ -9,3 +9,5 @@ cd react-gb-tables \
 npm install \
 npm run dev
 ```
+
+- Browse to `localhost:3000`.
