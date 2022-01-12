@@ -11,3 +11,6 @@ npm run dev
 ```
 
 - Browse to `localhost:3000`.
+
+## Todo
+- [ ] Add HTTPS to proxy so hosted version can fetch from GB API
