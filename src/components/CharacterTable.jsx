@@ -1,8 +1,17 @@
 import { useSortBy, useTable } from 'react-table'
 import styled from 'styled-components'
 
+/**
+ * The react-table table component take a props object containing
+ * the memoized columns and data from its parent.
+ */
 export default function CharacterTable({ columns, data }) {
 
+  /**
+   * The useTable method provides getter methods and classes that render
+   * content inside cells per the tag defined in the columns definition.
+   * Also provided are utility functions to trigger column sorting.
+   */
   const {
     getTableProps,
     getTableBodyProps,
@@ -11,6 +20,10 @@ export default function CharacterTable({ columns, data }) {
     prepareRow
   } = useTable({ columns, data }, useSortBy)
 
+  /**
+   * React-table getters are used to map table data to 
+   * Headers, Columns, Rows, and Cells.
+   */
   return (
     <TableDiv>
       <Table {...getTableProps()}>
