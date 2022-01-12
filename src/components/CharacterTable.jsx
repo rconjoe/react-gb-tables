@@ -59,18 +59,25 @@ const TableDiv = styled.div`
 `
 
 const Table = styled.table`
+  border-collapse: collapse;
+  font-size: 0.9em;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 `
 
 const THead = styled.thead`
+  color: #ffffff;
 `
 
 const TR = styled.tr`
+  border-bottom: 1px solid #dddddd;
 `
 
 const TH = styled.th`
   color: white;
   background-color: #282c34;
   border: 1px solid white;
+  padding: 12px 15px;
 `
 
 const TD = styled.td`
