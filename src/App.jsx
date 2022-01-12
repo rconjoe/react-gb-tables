@@ -9,11 +9,11 @@ import {
 import fetchCharacters from './lib/fetchCharacters'
 import Loading from './components/Loading'
 import CharacterTable from './components/CharacterTable'
+import CharacterModal from './components/CharacterModal'
 import {
   Container, 
   Row,
   Col,
-  Button
 } from 'react-bootstrap'
 import styled from 'styled-components'
 
@@ -21,6 +21,7 @@ function App() {
 
   const [ loaded, setLoaded ] = useState(false)
   const [ characters, setCharacters ] = useState([])
+  const [ showModal, setShowModal ] = useState({ show: false, url: "" })
 
   useEffect(async () => {
     setLoaded(false)
@@ -35,11 +36,14 @@ function App() {
           Header: 'Image',
           accessor: 'image.icon_url',
           Cell: ({ cell }) => (
-            <img 
-              className='characterThumb' 
-              src={cell.row.original.image.icon_url} 
-              onClick={() => showDetails(cell.row.original.site_detail_url)}
-            />
+            <>
+              <img 
+                className='characterThumb' 
+                src={cell.row.original.image.icon_url} 
+                onClick={() => setShowModal({ show: true, url: cell.row.original.site_detail_url })}
+              />
+
+            </>
           )
         },
         {
@@ -80,10 +84,6 @@ function App() {
     () => characters, [loaded]
   )
 
-  function showDetails(cell) {
-    console.log(cell)
-  }
-
 
   return (
     loaded === false ? (
@@ -98,8 +98,13 @@ function App() {
           </div>
         </Row>
         <Row className='padBottom'>
-          <Col md={{ span: 8, offset: 2}}>
-            <CharacterTable columns={columns} data={data} />
+          <Col xs={{ span: 8, offset: 2}}>
+          <CharacterTable columns={columns} data={data} />
+          <CharacterModal
+            show={showModal.show}
+            url={showModal.url}
+            onHide={() => setShowModal({ show: false, url: "" })}
+          />
           </Col>
         </Row>
       </Container>
